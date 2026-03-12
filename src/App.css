@@ -1,42 +1,167 @@
-#root {
-  max-width: 1280px;
+:root {
+  --background: #1a1a1a;
+  --surface: #2d2d2d;
+  --primary: #646cff;
+  --text: #ffffff;
+  --text-secondary: #888888;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --info: #2196f3;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  font-family: system-ui, -apple-system,sans-serif;
+}
+
+.app {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+header {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header h1 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+header p {
+  color: var(--text-secondary);
+}
+main {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+}
+
+.queue-form {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.queue-form h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: var(--text);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+input,
+select {
+  appearance: none;
+  background-image: url(https://unsplash.com/photos/sunlit-meadow-with-trees-and-mountains-in-background-d5Bh-sSPe3Y);
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.5em;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: var(--text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  height: 45px;
+}
+
+button:hover{
+  opacity: 0.9;
+}
+
+.queue-display {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.queue-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.queue-item {
+ background: var(--background);
+ padding: 1rem;
+ border-radius: 4px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.cutomer-info h3 {
+  margin: 0;
+  color: var(--text);
+}
+
+.cutomer-info p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  width: auto;
+  padding: 0.5rem 1rem;
+}
+
+.serve-btn {
+  background: var(--success);
+}
+
+.status {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.empty-queue {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px){
+  main{
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
